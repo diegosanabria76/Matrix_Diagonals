@@ -1,1 +1,31 @@
+def matrix_left(matrix):
+    counter = 0
+    left_nums = []
 
+    for i in range(len(matrix)):
+        for j in range (len(matrix[i])):
+            if i==j:
+                num = matrix[i][j]
+                left_nums.append(num)
+    return(left_nums)
+
+def matrix_right(matrix ):
+    right_nums = []
+    n = len(matrix)
+
+    for i in range(len(matrix)):
+        for j in range (len(matrix[i])):
+            if j+i==n-1:
+                num = matrix[i][j]
+                right_nums.append(num)
+
+    return(right_nums)
+
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+for lista in matrix:
+    print(lista)
+
+print("="*40)
+print(matrix_right(matrix ))
+
+print(matrix_left(matrix))
